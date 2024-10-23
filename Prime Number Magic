@@ -1,0 +1,124 @@
+/*
+Marigrace Ivie
+Lab 6: Prime Magic
+December 8, 2023
+*/
+#include <fstream>
+using namespace std;
+
+void openInputDataFile(string inputFileName, int inputData[]);
+void greatestCommonDivisor(int number1, int number2, string gcdFileName);
+void primeFactors(int number1, string pfFileName);
+
+//Function to open file & read two integers
+void openInputDataFile(string inputFileName, int inputData[])
+{
+    ifstream inFile;
+    inFile.open (inputFileName);
+    inFile >> inputData[0] >> inputData[1];
+    inFile.close();
+}
+//Function to find GCD between the two integers and print it
+void greatestCommonDivisor (int number1, int number2, string gcdFileName)
+{
+    ofstream outFile;
+    outFile.open (gcdFileName);
+    outFile << number2 << endl;
+    for (int i =2; i <= number1; ++i){
+
+
+    int a = number2, b = i, temp;
+    while (b != 0)
+    {
+        temp = a % b;
+        a = b;
+        b= temp;
+    } 
+outFile << i << ' ' << a << endl;
+}
+outFile.close();
+}
+void primeFactors(int number1, string pfFileName)
+{
+    ofstream outFile;
+    outFile.open (pfFileName);
+    for (int i=2; i <= number1; i++)
+    {
+        outFile << i << ' ';
+        int temp = i;
+        for (int j = 2; j <=temp; j++)
+        {
+
+        while (temp % j==0)
+        {
+            outFile << j << ' ';
+            temp /= j;
+        }
+    }
+    outFile << endl;
+    }
+    outFile.close();
+}
+/*
+Marigrace Ivie
+Marigrace.Ivie14
+Lab 6: Prime Magic
+December 8, 2023
+COSC 1436 - R3A-R3B
+*/
+#include <fstream>
+using namespace std;
+
+void openInputDataFile(string inputFileName, int inputData[]);
+void greatestCommonDivisor(int number1, int number2, string gcdFileName);
+void primeFactors(int number1, string pfFileName);
+
+//Function to open file & read two integers
+void openInputDataFile(string inputFileName, int inputData[])
+{
+    ifstream inFile;
+    inFile.open (inputFileName);
+    inFile >> inputData[0] >> inputData[1];
+    inFile.close();
+}
+//Function to find GCD between the two integers and print it
+void greatestCommonDivisor (int number1, int number2, string gcdFileName)
+{
+    ofstream outFile;
+    outFile.open (gcdFileName);
+    outFile << number2 << endl;
+    for (int i =2; i <= number1; ++i){
+
+
+    int a = number2, b = i, temp;
+    while (b != 0)
+    {
+        temp = a % b;
+        a = b;
+        b= temp;
+    } 
+outFile << i << ' ' << a << endl;
+}
+outFile.close();
+}
+void primeFactors(int number1, string pfFileName)
+{
+    ofstream outFile;
+    outFile.open (pfFileName);
+    for (int i=2; i <= number1; i++)
+    {
+        outFile << i << ' ';
+        int temp = i;
+        for (int j = 2; j <=temp; j++)
+        {
+
+        while (temp % j==0)
+        {
+            outFile << j << ' ';
+            temp /= j;
+        }
+    }
+    outFile << endl;
+    }
+    outFile.close();
+}
